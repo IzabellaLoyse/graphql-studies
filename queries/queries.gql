@@ -1,0 +1,40 @@
+# Queries
+
+query GET_USER {
+  user {
+    id
+    name
+  }
+}
+
+query GET_USERS {
+  users {
+    id
+    name
+  }
+}
+
+# Queries with arguments
+
+query GET_USER {
+  user(id: "812") {
+    id
+    userName
+    firstName
+  }
+}
+
+# Query Variables
+
+# variables
+# {
+#   "id": "812"
+# }
+
+query GET_USER($id: ID!) {
+  user(id: $id) {
+    id
+    userName
+    firstName
+  }
+}
