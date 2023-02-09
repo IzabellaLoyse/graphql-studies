@@ -116,6 +116,44 @@ Retorno
 
 ```
 
+### Aliases
+
+- Você deve ter notado que, como os campos de objeto de resultado correspondem ao nome do campo na consulta, mas não incluem argumentos, você não pode consultar diretamente o mesmo campo com argumentos diferentes.
+- É por isso que você precisa de aliases - eles permitem que você renomeie o resultado de um campo para o que quiser.
+
+```
+query GET_POST {
+ post860: post(id: "860") {
+    id
+    title
+  }
+
+   post(id: "342") {
+    id
+    title
+  }
+}
+
+```
+
+Retorno
+
+```
+{
+  "data": {
+    "post860": {
+      "id": "860",
+      "title": "Et voluptatem nulla omnis et iusto ullam."
+    },
+    "post": {
+      "id": "342",
+      "title": "Maiores ex tempore quo qui."
+    }
+  }
+}
+
+```
+
 ## Scalar Types
 
 - São os tipos primitivos de dados no GraphQl

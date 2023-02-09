@@ -38,3 +38,17 @@ query GET_USER($id: ID!) {
     firstName
   }
 }
+
+# Aliases
+
+query GET_POST {
+  post860: post(id: "860") {
+    id
+    title
+  }
+
+  post(id: "342") {
+    id
+    title
+  }
+}
