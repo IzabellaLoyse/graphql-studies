@@ -154,6 +154,33 @@ Retorno
 
 ```
 
+### Fragments
+
+- Os fragmentos permitem construir conjuntos de campos e, em seguida, incluí-los em consultas onde você precisa.
+
+```
+fragment post on Post {
+  id
+  title
+  body
+  createdAt
+  indexRef
+  unixTimestamp
+}
+
+query GET_POST {
+ post860: post(id: "860") {
+    id
+    title
+  }
+
+   post(id: "342") {
+    ...post
+  }
+}
+
+```
+
 ## Scalar Types
 
 - São os tipos primitivos de dados no GraphQl

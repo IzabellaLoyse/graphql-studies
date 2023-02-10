@@ -52,3 +52,25 @@ query GET_POST {
     title
   }
 }
+
+# Fragments
+
+fragment post on Post {
+  id
+  title
+  body
+  createdAt
+  indexRef
+  unixTimestamp
+}
+
+query GET_POST {
+  post860: post(id: "860") {
+    id
+    title
+  }
+
+  post(id: "342") {
+    ...post
+  }
+}
